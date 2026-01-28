@@ -23,6 +23,13 @@ Es el "cerebro" que centraliza la configuración de todo el ecosistema.
 * **Prueba de funcionamiento:** `http://localhost:8888/inventory-service/default`
 * **Estado:** Completado ✅
 
+### 3. Inventory Service
+Es el primer microservicio de negocio (Sistemas Distribuidos).
+* **Función:** Gestión de inventario. Obtiene su configuración dinámicamente del Config Server y se registra automáticamente en Eureka.
+* **Monitoreo:** Incluye **Spring Boot Actuator** para auditoría y chequeo de salud (Health Check).
+* **Puerto:** `8081` (asignado vía Config Server).
+* **Estado:** Completado ✅
+
 ## 🚀 Cómo ejecutarlo
 1. Clonar el repositorio.
 2. Abrir el proyecto `discovery-server` en un IDE (IntelliJ).
