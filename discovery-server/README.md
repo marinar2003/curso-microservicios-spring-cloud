@@ -16,6 +16,13 @@ Es el "corazón" de la arquitectura.
 * **Puerto:** `8761`
 * **Estado:** Completado ✅
 
+### 2. Config Server
+Es el "cerebro" que centraliza la configuración de todo el ecosistema.
+* **Función:** Proveer propiedades externas a los microservicios mediante un repositorio Git local.
+* **Puerto:** `8888`
+* **Prueba de funcionamiento:** `http://localhost:8888/inventory-service/default`
+* **Estado:** Completado ✅
+
 ## 🚀 Cómo ejecutarlo
 1. Clonar el repositorio.
 2. Abrir el proyecto `discovery-server` en un IDE (IntelliJ).
