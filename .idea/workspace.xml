@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95aff911-bff2-4a59-8ee3-8eab86e36c79" name="Changes" comment="configuracion Circuit Breaker">
+    <list default="true" id="95aff911-bff2-4a59-8ee3-8eab86e36c79" name="Changes" comment="configuracion Circuit Breaker (correcciones en pom, OrderController)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/order-service/src/main/java/com/example/order_service/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-service/src/main/java/com/example/order_service/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/api-gateway.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/api-gateway.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/inventory-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/inventory-service.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/order-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/order-service.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/config-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/inventory-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/inventory-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-service/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +28,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/config-repo" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
@@ -210,13 +216,22 @@
       <option name="project" value="LOCAL" />
       <updated>1769960299661</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="configuracion Circuit Breaker (correcciones en pom, OrderController)">
+      <option name="closed" value="true" />
+      <created>1769961182503</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1769961182503</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Final: Microservicios configurados y sincronizados" />
     <MESSAGE value="Comunicación feign, eureka y balanceo de carga round robin" />
     <MESSAGE value="configuracion Circuit Breaker" />
-    <option name="LAST_COMMIT_MESSAGE" value="configuracion Circuit Breaker" />
+    <MESSAGE value="configuracion Circuit Breaker (correcciones en pom, OrderController)" />
+    <option name="LAST_COMMIT_MESSAGE" value="configuracion Circuit Breaker (correcciones en pom, OrderController)" />
   </component>
 </project>
