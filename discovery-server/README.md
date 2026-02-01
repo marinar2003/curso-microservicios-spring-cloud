@@ -6,6 +6,8 @@ Este repositorio contiene el desarrollo práctico de mi aprendizaje sobre arquit
 * **Java 21**
 * **Spring Boot 3.x**
 * **Spring Cloud Netflix Eureka** (Service Discovery)
+* **Spring Cloud Config**
+* **Spring Boot Actuator**
 * **Maven**
 
 ## Estructura del Proyecto
