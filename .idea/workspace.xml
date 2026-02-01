@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95aff911-bff2-4a59-8ee3-8eab86e36c79" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/inventory-service/inventory-service/src/main/java/com/example/inventory_service/controller/InventoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/order-service/src/main/java/Controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/order-service/src/main/java/client/InventoryClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="95aff911-bff2-4a59-8ee3-8eab86e36c79" name="Changes" comment="Final: Microservicios configurados y sincronizados">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-repo/api-gateway.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/api-gateway.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/config-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/config-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/config-server/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discovery-server/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-server/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovery-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/inventory-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/inventory-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/inventory-service/src/main/java/com/example/inventory_service/controller/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/inventory-service/src/main/java/com/example/inventory_service/controller/InventoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-service/src/main/java/Controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-service/src/main/java/com/example/order_service/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-service/src/main/java/client/InventoryClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-service/src/main/java/com/example/order_service/client/InventoryClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-service/src/main/java/com/example/order_service/OrderServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-service/src/main/java/com/example/order_service/OrderServiceApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +27,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "marinar2003"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/marinar2003/curso-microservicios-spring-cloud.git",
+    "accountId": "02a831d9-f4ab-4b6f-8749-60c77b46f82f"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -49,6 +54,7 @@
     "Application.ApiGatewayApplication.executor": "Run",
     "Application.ConfigServerApplication.executor": "Run",
     "Application.DiscoveryServerApplication.executor": "Run",
+    "Application.Inventory-9090.executor": "Run",
     "Application.InventoryServiceApplication.executor": "Run",
     "Application.OrderServiceApplication.executor": "Run",
     "Maven.api-gateway [clean].executor": "Run",
@@ -75,7 +81,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ApiGatewayApplication">
+  <component name="RunManager" selected="Application.Inventory-9090">
     <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.api_gateway.ApiGatewayApplication" />
       <module name="api-gateway" />
@@ -115,6 +121,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Inventory-9090" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.example.inventory_service.InventoryServiceApplication" />
+      <module name="inventory-service" />
+      <option name="VM_PARAMETERS" value="-Dserver.port=9090" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.inventory_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="InventoryServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.inventory_service.InventoryServiceApplication" />
       <module name="inventory-service" />
@@ -141,11 +161,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Inventory-9090" />
+      <item itemvalue="Application.ApiGatewayApplication" />
+      <item itemvalue="Application.ConfigServerApplication" />
+      <item itemvalue="Application.DiscoveryServerApplication" />
+      <item itemvalue="Application.InventoryServiceApplication" />
+      <item itemvalue="Application.OrderServiceApplication" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ApiGatewayApplication" />
         <item itemvalue="Application.InventoryServiceApplication" />
         <item itemvalue="Application.OrderServiceApplication" />
+        <item itemvalue="Application.ApiGatewayApplication" />
         <item itemvalue="Application.ConfigServerApplication" />
         <item itemvalue="Application.DiscoveryServerApplication" />
       </list>
@@ -159,6 +187,19 @@
       <option name="presentableId" value="Default" />
       <updated>1769511217421</updated>
     </task>
+    <task id="LOCAL-00001" summary="Final: Microservicios configurados y sincronizados">
+      <option name="closed" value="true" />
+      <created>1769951950445</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1769951950445</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Final: Microservicios configurados y sincronizados" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final: Microservicios configurados y sincronizados" />
   </component>
 </project>

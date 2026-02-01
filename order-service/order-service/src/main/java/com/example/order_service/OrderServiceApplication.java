@@ -9,6 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients // <--- OBLIGATORIO para que funcione Feign
 @EnableDiscoveryClient
 @SpringBootApplication
+
 public class OrderServiceApplication {
 
 	public static void main(String[] args) {
