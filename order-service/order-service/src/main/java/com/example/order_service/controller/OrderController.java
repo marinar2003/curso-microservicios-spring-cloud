@@ -15,22 +15,15 @@ public class OrderController {
     @Autowired
     private InventoryClient inventoryClient;
 
-    //@GetMapping("/create")
-    //public String createOrder() {
-    // Llamamos a la INSTANCIA (inventoryClient) y al metodo
-    //String status = inventoryClient.isInStock("CODIGO_PRUEBA");
-    //return "Pedido recibido. Estado del inventario: " + status;
-
     @GetMapping("/create")
+// El nombre del método fallback debe coincidir letra por letra
     @CircuitBreaker(name = "inventoryCB", fallbackMethod = "fallbackInventory")
-    public String createOrder(@RequestParam("code") String code) { // Agregamos el RequestParam
-        // Ahora usamos el 'code' que viene de Postman
-        String status = inventoryClient.isInStock(code);
-        return "Pedido recibido. Producto: " + code + ". Estado del inventario: " + status;
+    public String createOrder(@RequestParam("code") String code) {
+        return inventoryClient.isInStock(code);
     }
 
-    //Este método se ejecuta cuando el circuito está ABIERTO o hay error
-    public String fallbackInventory(String code, Throwable throwable) {
-        return "Lo sentimos, el servicio de inventario no está disponible para el producto: " + code + ". Intente más tarde.";
+    // IMPORTANTE: Los parámetros deben ser (ParámetrosOriginales, Throwable t)
+    public String fallbackInventory(String code, Throwable t) {
+        return "Fallback: El servicio de inventario no está disponible actualmente para " + code;
     }
 }
