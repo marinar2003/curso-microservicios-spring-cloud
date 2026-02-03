@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95aff911-bff2-4a59-8ee3-8eab86e36c79" name="Changes" comment="Zipkin en inventory-service.properties">
+    <list default="true" id="95aff911-bff2-4a59-8ee3-8eab86e36c79" name="Changes" comment="cambios en inventory server y api-gateway">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-repo/api-gateway.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/api-gateway.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-repo/inventory-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/inventory-service.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/config-server/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +80,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.OrderServiceApplication">
+  <component name="RunManager" selected="Application.ApiGatewayApplication">
     <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.api_gateway.ApiGatewayApplication" />
       <module name="api-gateway" />
@@ -172,9 +170,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.OrderServiceApplication" />
         <item itemvalue="Application.ApiGatewayApplication" />
         <item itemvalue="Application.InventoryServiceApplication" />
+        <item itemvalue="Application.OrderServiceApplication" />
         <item itemvalue="Application.ConfigServerApplication" />
         <item itemvalue="Application.DiscoveryServerApplication" />
       </list>
@@ -260,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769965197932</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="cambios en inventory server y api-gateway">
+      <option name="closed" value="true" />
+      <created>1770079753645</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1770079753645</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -271,6 +277,7 @@
     <MESSAGE value="Configuracion Zipkin" />
     <MESSAGE value="Zipkin" />
     <MESSAGE value="Zipkin en inventory-service.properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="Zipkin en inventory-service.properties" />
+    <MESSAGE value="cambios en inventory server y api-gateway" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambios en inventory server y api-gateway" />
   </component>
 </project>
