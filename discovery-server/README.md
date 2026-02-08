@@ -1,83 +1,69 @@
-# Ecosistema de Microservicios con Spring Cloud 
+# Ecosistema de Microservicios con Spring Cloud
 
-Este repositorio contiene el desarrollo práctico de mi aprendizaje sobre arquitecturas distribuidas. El objetivo es construir un sistema escalable utilizando el ecosistema de Spring.
+Este repositorio contiene una arquitectura distribuida completa, diseñada para ser escalable, resiliente y monitoreable. El sistema simula un flujo de e-commerce donde la gestión de pedidos e inventario están desacoplados y supervisados en tiempo real.
 
-## Tecnologías utilizadas
-* **Java 21**
-* **Spring Boot 3.x**
+
+
+## Tecnologías y Stack
+* **Java 21** & **Spring Boot 3.4.2**
 * **Spring Cloud Netflix Eureka** (Service Discovery)
-* **Spring Cloud Config** (Configuración centralizada)
-* **Spring Boot Actuator** (Monitoreo y Health Checks)
+* **Spring Cloud Config** (Configuración centralizada con Git)
+* **Spring Cloud Gateway** (Punto de entrada único y ruteo dinámico)
 * **Spring Cloud OpenFeign** (Comunicación declarativa entre servicios)
-* **Spring Cloud LoadBalancer** (Balanceo de carga del lado del cliente)
-* **Maven**
+* **Resilience4j** (Implementación de Circuit Breaker y Resiliencia)
+* **Micrometer + Zipkin** (Trazabilidad distribuida y Observabilidad)
+* **Maven** (Gestión de dependencias)
 
-## Estructura del Proyecto
+---
 
-### 1. Discovery Server (Eureka)
-Es el "corazón" de la arquitectura.
-* **Función:** Registro y descubrimiento de servicios.
-* **Puerto:** `8761`
-* **Estado:** Completado ✅
+## Estructura del Ecosistema
 
-### 2. Config Server
-Es el "cerebro" que centraliza la configuración de todo el ecosistema.
-* **Función:** Proveer propiedades externas a los microservicios mediante un repositorio Git local.
-* **Puerto:** `8888`
-* **Estado:** Completado ✅
+### 1. Infraestructura Core
+* **Discovery Server (Eureka):** El directorio central donde todos los servicios se registran para permitir la comunicación mediante nombres lógicos en lugar de IPs fijas. (Puerto `8761`).
+* **Config Server:** El cerebro de la configuración. Centraliza los archivos `.properties` en un repositorio Git, permitiendo gestionar cambios sin reconstruir los microservicios. (Puerto `8888`).
+* **API Gateway:** El único punto de entrada para los clientes. Se encarga del ruteo inteligente hacia los microservicios internos. (Puerto `9095`).
 
-### 3. Inventory Service
-Es el primer microservicio de negocio (Sistemas Distribuidos).
-* **Función:** Gestión de inventario. Obtiene su configuración dinámicamente del Config Server y se registra automáticamente en Eureka.
-* **Monitoreo:** Incluye **Spring Boot Actuator** para auditoría y chequeo de salud (Health Check).
-* **Puerto:** `8081` (asignado vía Config Server).
-* **Estado:** Completado ✅
+### 2. Servicios de Negocio
+* **Inventory Service:** Gestiona la existencia de productos. Está diseñado para escalar horizontalmente (varias instancias) para soportar alta carga.
+* **Order Service:** Orquesta la creación de pedidos. Utiliza **Feign Client** para consultar al Inventario y toma decisiones basadas en la disponibilidad.
 
-### 4. Order Service
-* **Función:** Gestión de pedidos. Se comunica con Inventory Service para verificar stock antes de procesar una orden.
-* **Monitoreo:** Utiliza Feign Client para llamadas HTTP simplificadas y Load Balancer para distribuir carga.
-* **Puerto:** `8082` 
-* **Estado:** Completado ✅
+---
 
-### 🚀 Avances Recientes: Escalabilidad y Comunicación
+## Observabilidad y Resiliencia
 
-#### 🔄 Comunicación Dinámica con Feign
-Hemos implementado una interfaz declarativa utilizando **Spring Cloud OpenFeign**. Esto permite que el `Order Service` se comunique con el `Inventory Service` de forma elegante, abstrayendo la lógica de las peticiones HTTP.
-
-Ahora el sistema procesa parámetros dinámicos, permitiendo consultar la disponibilidad de cualquier producto mediante una petición simple:
-
-* **Endpoint:** `GET http://localhost:8082/api/orders/create?code=samsung`
-* **Flujo:** Postman → Order Service → Feign Client → Inventory Service → Respuesta Combinada.
+### Trazabilidad Distribuida (Zipkin)
+Hemos implementado **Micrometer Tracing** para dar visibilidad al viaje de cada petición.
+* Cada solicitud genera un `Trace ID` único que persiste a través de todos los servicios.
+* **Zipkin** recolecta estos datos, permitiendo visualizar latencias y detectar exactamente en qué punto de la cadena ocurrió un error.
 
 
-#### ⚖️ Balanceo de Carga (Round Robin)
-Para garantizar la alta disponibilidad y el aprovechamiento de recursos, configuramos **Spring Cloud LoadBalancer**. El sistema es capaz de manejar múltiples instancias del microservicio de inventario simultáneamente.
 
-* **Algoritmo:** Round Robin (reparto equitativo).
-* **Funcionamiento:** El LoadBalancer consulta a **Eureka** las instancias activas y alterna las peticiones entre ellas (ej. una petición al puerto `8081` y la siguiente al puerto `9090`), evitando la saturación de un único nodo.
+### Tolerancia a Fallos y Balanceo
+* **Circuit Breaker:** Gracias a Resilience4j, si el Inventory Service falla, el Order Service no se bloquea; activa un método de "fallback" para mantener la experiencia del usuario.
+* **Load Balancer:** Implementado con Round Robin. Si levantas múltiples instancias del inventario, el sistema reparte las peticiones equitativamente entre ellas automáticamente.
 
-## 🏁 Cómo ejecutar el ecosistema
+---
 
-Siga este orden estrictamente para asegurar que el descubrimiento de servicios y la configuración centralizada funcionen correctamente:
+## Cómo ejecutar el ecosistema
 
-1.  **Discovery Server (Eureka):** * Ejecutar `DiscoveryServerApplication`.
-    * **Puerto:** `8761`
-    * *Nota:* Esperar a que el dashboard esté disponible en `http://localhost:8761`.
+Para garantizar la integridad del flujo, inicia los servicios en este orden:
 
-2.  **Config Server:** * Ejecutar `ConfigServerApplication`.
-    * **Puerto:** `8888`
-    * *Nota:* Asegurarse de que el repositorio de configuración sea accesible.
+1.  **Discovery Server**: Esperar a que el dashboard en `http://localhost:8761` esté activo.
+2.  **Config Server**: Asegurarse de que el repositorio de configuración sea accesible.
+3.  **Inventory Service**: Puedes iniciar una instancia en el puerto `8081` y otra en el `9090` (usando `-Dserver.port=9090`).
+4.  **Order Service**: Se registrará en Eureka y buscará la configuración en el Config Server.
+5.  **API Gateway**: El último en iniciar para comenzar a recibir peticiones.
 
-3.  **Inventory Service:** * Ejecutar `InventoryServiceApplication`.
-    * **Puerto:** `8081` (Instancia principal).
-    * **Segunda instancia (Opcional):** Para probar el balanceo de carga, configurar `VM Options` con `-Dserver.port=9090` y ejecutar una segunda instancia.
+---
 
-4.  **Order Service:** * Ejecutar `OrderServiceApplication`.
-    * **Puerto:** `8082`
+### Prueba de Integración End-to-End
 
-    
-### 🧪 Prueba de Integración
-Una vez que todos los servicios estén en verde en el dashboard de Eureka, podés realizar una prueba de extremo a extremo:
+Ya no es necesario llamar a los servicios individuales. Todas las peticiones deben pasar por el Gateway:
 
-* **URL de prueba:** `GET http://localhost:8082/api/orders/create?code=samsung`
-* **Resultado esperado:** Una respuesta que confirme la creación del pedido y muestre qué instancia del inventario (8081 o 9090) respondió a la solicitud.
+* **URL:** `GET http://localhost:9095/api/orders/create?code=samsung`
+* **Flujo Interno:** `Postman` ➔ `API Gateway` ➔ `Order Service` ➔ `Inventory Service` (vía Feign).
+
+---
+
+### Notas de Implementación
+* Se utiliza **Spring Boot
