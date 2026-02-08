@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95aff911-bff2-4a59-8ee3-8eab86e36c79" name="Changes" comment="cambios en inventory server y api-gateway">
+    <list default="true" id="95aff911-bff2-4a59-8ee3-8eab86e36c79" name="Changes" comment="actualizacion en inventory server">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-repo/inventory-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/inventory-service.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/com/example/api_gateway/ApiGatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/src/main/java/com/example/api_gateway/ApiGatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/inventory-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/inventory-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/inventory-service/src/main/java/com/example/inventory_service/InventoryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/inventory-service/src/main/java/com/example/inventory_service/InventoryServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service.properties" beforeDir="false" afterPath="$PROJECT_DIR$/order-service.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-service/src/main/java/com/example/order_service/OrderServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-service/src/main/java/com/example/order_service/OrderServiceApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +31,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/config-repo" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -266,7 +275,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770079753645</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="actualizacion en inventory server">
+      <option name="closed" value="true" />
+      <created>1770083838863</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1770083838863</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -278,6 +295,7 @@
     <MESSAGE value="Zipkin" />
     <MESSAGE value="Zipkin en inventory-service.properties" />
     <MESSAGE value="cambios en inventory server y api-gateway" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios en inventory server y api-gateway" />
+    <MESSAGE value="actualizacion en inventory server" />
+    <option name="LAST_COMMIT_MESSAGE" value="actualizacion en inventory server" />
   </component>
 </project>
