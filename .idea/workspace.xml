@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="95aff911-bff2-4a59-8ee3-8eab86e36c79" name="Changes" comment="ecosistema completo con Config Server, Discovery Server, Gateway, Resiliencia y Trazabilidad.">
+    <list default="true" id="95aff911-bff2-4a59-8ee3-8eab86e36c79" name="Changes" comment="Modificacion de README (el proyecto pasó de ser un &quot;ejercicio de servicios&quot; a una Arquitectura de Microservicios Profesional">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovery-server/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-server/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-repo/api-gateway.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-repo/api-gateway.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +87,7 @@
       <module name="api-gateway" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.api_gateway.*" />
+          <option name="PATTERN" value="com.example.api_gateway.config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -282,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770564055162</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Modificacion de README (el proyecto pasó de ser un &quot;ejercicio de servicios&quot; a una Arquitectura de Microservicios Profesional">
+      <option name="closed" value="true" />
+      <created>1770566112864</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1770566112864</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -296,6 +305,7 @@
     <MESSAGE value="cambios en inventory server y api-gateway" />
     <MESSAGE value="actualizacion en inventory server" />
     <MESSAGE value="ecosistema completo con Config Server, Discovery Server, Gateway, Resiliencia y Trazabilidad." />
-    <option name="LAST_COMMIT_MESSAGE" value="ecosistema completo con Config Server, Discovery Server, Gateway, Resiliencia y Trazabilidad." />
+    <MESSAGE value="Modificacion de README (el proyecto pasó de ser un &quot;ejercicio de servicios&quot; a una Arquitectura de Microservicios Profesional" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificacion de README (el proyecto pasó de ser un &quot;ejercicio de servicios&quot; a una Arquitectura de Microservicios Profesional" />
   </component>
 </project>
